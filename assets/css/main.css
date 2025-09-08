@@ -3945,20 +3945,26 @@ section,
 /*--------------------------------------------------------------
 # Starter Section Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
-}
-
-
 
 
  /* Team Card Styles */
- .team-card {
+ /* .team-card {
   border-radius: 12px;
   overflow: hidden;
   background: #fff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+} */
+
+.team-card {
+  border-radius: 12px;
+  height: 400px; /* adjust as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 
 /* Hover pop effect */
 .team-card:hover {
@@ -3967,17 +3973,25 @@ section,
 }
 
 /* Image styling */
-.team-img img {
+/* .team-img img {
   width: 100%;
   height: auto;
   object-fit: cover;
+} */
+
+.team-img img {
+  width: 100%;
+  height: auto;  /* fix image height */
+  object-fit: cover; /* keeps aspect ratio while filling */
 }
 
-/* Content area with theme color */
 .team-content {
+  flex: 1;
+  padding: 15px;
   background: linear-gradient(135deg, var(--accent-color), color-mix(in srgb, var(--accent-color), var(--heading-color) 20%)); /* Theme dark green (change as you like) */
   color: #fff;
 }
+
 
 .team-content h5 {
   margin-bottom: 4px;
@@ -3997,4 +4011,40 @@ section,
   font-size: 0.85rem;
   line-height: 1.4;
   color: var(--heading-color);
+}
+
+/* Base Hero Section */
+.hero {
+  background-image: url('assets/img/R.png');
+  background-size: cover;       /* make sure image covers entire section */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* prevent repeating */
+  height: 110vh;                /* full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 1500px) {
+  .hero {
+    background-size: contain;   /* fit image inside on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-size: contain;   /* fit image inside on smaller screens */
+    height: 70vh;               /* reduce height for mobile */
+    padding: 50px;              /* add padding for content */
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    background-size: contain;   /* fit image inside on smaller screens */
+    height: 70vh;               /* reduce height for mobile */
+    padding: 50px;              /* add padding for content */
+  }
 }
